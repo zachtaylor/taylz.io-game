@@ -7,18 +7,18 @@ import (
 	"taylz.io/game/component/will"
 )
 
-type C struct {
-	Collision *collision.C
-	Shape     *shape.C
-	Update    *update.C
-	Will      *will.C
-}
+type Collision = collision.C
 
-func New() *C {
-	return &C{
-		Collision: collision.New(),
-		Shape:     shape.New(),
-		Update:    update.New(),
-		Will:      will.New(),
-	}
-}
+var NewCollision = collision.New
+
+type Shape = shape.C
+
+var NewShape = shape.New
+
+type Update = update.C
+
+var NewUpdate = update.New
+
+type Will = will.C
+
+var NewWill = will.New

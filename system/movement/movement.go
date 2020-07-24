@@ -1,7 +1,8 @@
 package movement
 
 import (
-	"taylz.io/game/component"
+	"taylz.io/game/component/collision"
+	"taylz.io/game/component/shape"
 	"taylz.io/game/component/will"
 	"taylz.io/game/entity"
 	space "taylz.io/game/space/2d"
@@ -9,13 +10,17 @@ import (
 )
 
 type S struct {
-	*component.C
+	Collision *collision.C
+	Shape     *shape.C
+	Will      *will.C
 }
 
-// New returns a new collision system
-func New(c *component.C) *S {
+// New returns a new movement system
+func New(collision *collision.C, shape *shape.C, will *will.C) *S {
 	return &S{
-		C: c,
+		Collision: collision,
+		Shape:     shape,
+		Will:      will,
 	}
 }
 
