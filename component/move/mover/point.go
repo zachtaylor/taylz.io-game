@@ -1,13 +1,13 @@
-package move
+package mover
 
 import (
-	"taylz.io/game/component/position"
-	"taylz.io/game/world/space"
+	"taylz.io/game/component/shape"
+	space "taylz.io/game/space/2d"
 	"taylz.io/types"
 )
 
 type Point struct {
-	Src   *position.T
+	Src   *shape.T
 	Point *space.Point
 }
 

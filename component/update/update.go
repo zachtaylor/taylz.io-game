@@ -1,22 +1,9 @@
 package update
 
-import (
-	"taylz.io/types"
-)
+import "taylz.io/types"
 
 type T struct {
 	Data types.Dict
-}
-
-func (t *T) Set(k string, v types.I) {
-	if t == nil {
-	} else if t.Data == nil {
-		t.Data = types.Dict{
-			k: v,
-		}
-		return
-	}
-	t.Data[k] = v
 }
 
 func (t *T) Merge(k, kk string, v types.I) {
@@ -37,3 +24,5 @@ func (t *T) Merge(k, kk string, v types.I) {
 		panic("update merge failed")
 	}
 }
+
+//go:generate go-gengen -p=update -k=entity.T -v=*T -i=taylz.io/game/entity

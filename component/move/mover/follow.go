@@ -1,10 +1,10 @@
-package move
+package mover
 
 import (
+	"taylz.io/game/component/move"
 	"taylz.io/game/component/shape"
-	"taylz.io/game/component/will"
 	"taylz.io/game/entity"
-	"taylz.io/game/world/space"
+	space "taylz.io/game/space/2d"
 	"taylz.io/types"
 )
 
@@ -13,7 +13,7 @@ type Follow struct {
 	Entity entity.T
 }
 
-func (f *Follow) isMover() will.Mover { return f }
+func (f *Follow) isMover() move.I { return f }
 
 func (f *Follow) Next(entity entity.T) space.Vector {
 	src := f.Shape.Get(entity)

@@ -1,4 +1,4 @@
-package will
+package move
 
 import (
 	"taylz.io/game/entity"
@@ -6,7 +6,13 @@ import (
 	"taylz.io/types"
 )
 
-type Mover interface {
+type T struct {
+	I
+}
+
+type I interface {
 	Next(entity.T) space.Vector
 	Data() types.Dict
 }
+
+//go:generate go-gengen -p=move -k=entity.T -v=*T -i=taylz.io/game/entity

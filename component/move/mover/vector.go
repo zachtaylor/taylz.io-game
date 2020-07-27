@@ -1,7 +1,7 @@
-package move
+package mover
 
 import (
-	"taylz.io/game/world/space"
+	space "taylz.io/game/space/2d"
 	"taylz.io/types"
 )
 

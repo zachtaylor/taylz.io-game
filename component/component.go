@@ -2,23 +2,23 @@ package component
 
 import (
 	"taylz.io/game/component/collision"
+	"taylz.io/game/component/move"
 	"taylz.io/game/component/shape"
 	"taylz.io/game/component/update"
-	"taylz.io/game/component/will"
 )
 
-type Collision = collision.C
+type Collision = collision.Cache
 
-var NewCollision = collision.New
+var NewCollision = collision.NewCache
 
-type Shape = shape.C
+type Shape = shape.Cache
 
-var NewShape = shape.New
+var NewShape = shape.NewCache
 
-type Update = update.C
+type Update = update.Cache
 
-var NewUpdate = update.New
+var NewUpdate = update.NewCache
 
-type Will = will.C
+type Move = move.Cache
 
-var NewWill = will.New
+var NewMove = move.NewCache
